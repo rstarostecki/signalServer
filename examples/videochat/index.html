@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>VideoChatTest</title>
+	</head>
+
+<body>
+	<p>Enter your name in textbox and register do SignalingServer</p>
+	<input id="address" type="textfield"></input>
+	<button id="register" onclick="register()">Register</button>
+	
+	<p>Enter registered peer name you want to connect to and press start</p>
+	<input id="target" type="textfield"></input>
+	<button id="start" onclick="start(true)">Start</button>
+	<br/>
+	<video id="localVideo" autoplay muted style="width:20%;"></video>
+	<video id="remoteVideo" autoplay style="width:40%;"></video>
+	        
+	<script src="js/webrtc/adapter.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

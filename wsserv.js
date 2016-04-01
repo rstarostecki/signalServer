@@ -80,8 +80,8 @@ function MessageDelivery(from, submessage){
 	var fs = require('fs');
 	var serverConfig = {
 		port: 1337,
-		cert : fs.readFileSync('/home/romek/cert/y50.pem'),
-		key : fs.readFileSync('/home/romek/cert/y50.key')
+		cert : fs.readFileSync('/home/romek/cert/y50.pem'), //provide your cert
+		key : fs.readFileSync('/home/romek/cert/y50.key')//provide your key
 	}
 
     var httpServ = require('https');
@@ -90,7 +90,7 @@ function MessageDelivery(from, submessage){
     var app = httpServ.createServer({
 	    	key: serverConfig.key,
 	    	cert: serverConfig.cert,
-	    	passphrase: "zupa"
+	    	passphrase: "zupa" //provide passphrase to your cert key  (or you will be prompted for key during wsserv start)
 	    }).listen( serverConfig.port );
 
     var wss = new WebSocketServer( { httpServer: app } );
